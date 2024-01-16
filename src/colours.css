@@ -1,0 +1,79 @@
+body {
+  background-color: white;
+  color: black;
+}
+
+.todo-wrapper {
+  background-color: #fcfafa;
+}
+
+.todo-input-item {
+  background-color: #ffc1c1;
+}
+
+.primary-btn {
+  background-color: #e82a4d;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #b80e37;
+}
+
+.secondaryBtn {
+  background-color: #fcfafa;
+}
+
+.secondaryBtn:hover {
+  background-color: #b80e37;
+  color: white;
+}
+
+.btn-area .active {
+  background-color: #e82a4d;
+  color: white;
+}
+
+.selectAll {
+  background-color: whitesmoke;
+}
+.selectAll:hover {
+  background-color: #b80e37;
+}
+/* .todo-list-item {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+} */
+
+.todo-list-item:hover {
+  background-color: whitesmoke;
+}
+
+.edit-icon {
+  color: green;
+}
+
+.delete-icon {
+  color: #e82a4d;
+}
+
+.check-icon {
+  color: #e82a4d;
+}
+
+.check-icon:hover {
+  color: #b80e37;
+}
+
+.delete-btn {
+  color: red;
+  background-color: #fcfafa;
+}
+.delete-btn:hover {
+  color: #b80e37;
+  background-color: whitesmoke;
+}
+
+.sortBy {
+  border-radius: 20px;
+}
