@@ -4,6 +4,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { BsCheckAll } from "react-icons/bs";
 import { CiEdit } from "react-icons/ci";
 import "./colours.css";
+import { ToDoInput } from "./components/ToDoInput";
 
 function App() {
   const [allTodos, setAllTodos] = useState([]);
@@ -224,24 +225,18 @@ function App() {
     (isCompletedScreen ? completedTodos : allTodos).some(
       (todo) => todo.isChecked
     );
+
   return (
     <div className="App">
       <div className="todo-wrapper">
         <h1>Grocery Bud</h1>
-        <form className="todo-input" onSubmit={handleAddNewToDo}>
-          <div className="todo-input-item">
-            <input
-              type="text"
-              className="TextBox"
-              value={newTodoTitle}
-              onChange={(e) => setNewTodoTitle(e.target.value)}
-              placeholder="E.g. Eggs"
-            />
-            <button className="primary-btn" type="submit">
-              Add
-            </button>
-          </div>
-        </form>
+
+        <ToDoInput
+          handleAddNewToDo={handleAddNewToDo}
+          newTodoTitle={newTodoTitle}
+          setNewTodoTitle={setNewTodoTitle}
+        />
+
         <div className="btn-area">
           <select onChange={handleSort} className="sortBy">
             <option value="default">Sort By</option>
@@ -356,6 +351,7 @@ function App() {
               </div>
             ))}
         </div>
+
         <div>
           <button className="delete-btn" onClick={handleDeleteChecked}>
             Delete Checked Items
