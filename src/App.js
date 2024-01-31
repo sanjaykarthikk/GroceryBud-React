@@ -5,6 +5,7 @@ import { BsCheckAll } from "react-icons/bs";
 import { CiEdit } from "react-icons/ci";
 import "./colours.css";
 import { ToDoInput } from "./components/ToDoInput";
+import { PieChart } from "./components/PieChart";
 
 function App() {
   const [allTodos, setAllTodos] = useState([]);
@@ -16,16 +17,12 @@ function App() {
   const [isAllCompletedSelected, setIsAllCompletedSelected] = useState(false);
 
   const handleAllComplete = () => {
-    const now = new Date();
-    const completedOn = `${now.toLocaleDateString()} at ${now.toLocaleTimeString()}`;
-
     const checkedTodos = allTodos.filter((todo) => todo.isChecked);
-
+    
     setCompletedTodos((prevCompletedTodos) => [
       ...prevCompletedTodos,
       ...checkedTodos.map((todo) => ({
         ...todo,
-        completedOn,
         isChecked: false,
       })),
     ]);
@@ -44,7 +41,6 @@ function App() {
         ...completedTodos,
         ...checkedTodos.map((todo) => ({
           ...todo,
-          completedOn,
           isChecked: false,
         })),
       ])
@@ -79,6 +75,8 @@ function App() {
     });
     setCompletedTodos(updatedCompletedTodos);
     setIsAllCompletedSelected(!isAllCompletedSelected);
+    console.log(completedTodos.value);
+    console.log(allTodos.value);
   };
 
   const handleSort = (e) => {
@@ -358,8 +356,12 @@ function App() {
           </button>
         </div>
       </div>
+      <div className="PieChart">
+        <PieChart toBuy={allTodos.length} purchased={completedTodos.length}/>
+      </div>
     </div>
   );
 }
 
 export default App;
+
